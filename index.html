@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="logo.png" rel="icon">
+    <link href="logo.png" rel="apple-touch-icon">
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <!-- font-awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title> Brick Sols</title>
+    <meta content="Website Designers , Website Developers and digital marketers" name="description">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+          // https://dashboard.emailjs.com/admin/account
+          emailjs.init('YfrCju-d4CTC_3vBS');
+        })();
+      </script>
+    
+      <script type="text/javascript">
+        window.onload = function () {
+          document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            document.querySelector('.sendmsg').value = "Sending..."
+            emailjs.sendForm('service_ezfhvsm', 'template_ve853hi', this)
+              .then(function () {
+                // console.log('SUCCESS!');
+                // alert("Success")
+                // setTimeout(() => {
+                //     console.log("called")
+                //     document.querySelector('.sent-message').classList.add('d-block')
+                // }, 10000);
+                document.querySelector('.sendmsg').value ="Message Sent 👍"
+                document.querySelector('.sendmsg').classList.add('sent-message')
+                // document.querySelector('.sent-message').classList.add('d-block');
+              }, function (error) {
+                console.log('FAILED...', error);
+              });
+          });
+        }
+      </script>
+
+</head>
+
+<body>
+    <!-- ----------------------------------------
+                         nav
+    ----------------------------------------------->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav>
+                        <div class="logo">
+                            <img src="logo.png" alt="">
+                            <!-- <a href="#"></a> -->
+                        </div>
+                        <ul class="links">
+                            <li><a href="#home">Home</a> </li>
+                            <li><a href="#about">Services</a> </li>
+                            <li><a href="#services">About</a> </li>
+                            <li><a href="#whyus">Why Us?</a> </li>
+                            <li class="contact-button"><span></span><a href="#contactUs">Contact us</a> </li>
+                        </ul>
+                        <!-- <div class="btn">
+                        <a href="#" class="action_btn">Login</a>
+                        <a href="#" class="action_btn">Sign up</a>
+                        </div> -->
+
+                        <div class="toggle_btn">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                    </nav>
+                    <div class="dropdown_menu ">
+                        <li><a href="#home">Home</a> </li>
+                        <li><a href="#about">Services</a> </li>
+                        <li><a href="#services">About</a> </li>
+                        <li><a href="#whyus">Why Us?</a> </li>
+                        <li><a href="#contactUs">Contact us</a> </li>
+                        <!-- <li><a href="#" class="action_btn">Login</a></li>
+                            <li><a href="#" class="action_btn">Sign up</a></li> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- toggle button -->
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+
+        }
+    </script>
+
+    <!-- ----------------------------------------
+                                    end nav
+    ----------------------------------------------->
+
+    <!-- ----------------------------------------
+                        home section
+    ----------------------------------------------->
+
+    <div class=" gtco-banner-area" id="home">
+        <div class="container-fluid home-section">
+            <div class="row">
+                <div class="col-md-6 left-side">
+                    <h1> We promise to bring
+                        the best <span>Solutions</span> for
+                        your business. </h1>
+                    <p> When it comes to achieving ultimate success, the perfect combination is your business with our
+                        expertise - a match made in heaven!. </p>
+
+                    <a href="#contactUs" class="button">Contact Us <i class="fa fa-angle-right"
+                            aria-hidden="true"></i></a>
+                </div>
+                <div class="col-md-6 right-side ">
+                    <div class="card"><img class="card-img-top img-fluid img" src="images/banner-img.png" alt=""></div>
+                    <!-- <div class="card"><img class="card-img-top img-fluid img" src="images/uy789ytg.gif" alt=""></div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ----------------------------------------
+                    end home section
+    ----------------------------------------------->
+
+
+    <!-- ----------------------------------------
+                Features Small Start  3 cards
+    ----------------------------------------------->
+    <section class="section home-feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row set-of-cards">
+                        <!-- ***** Features Small Item Start ***** -->
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12"
+                            data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                            <div class="features-small-item">
+                                <div class="icon">
+                                    <i><img src="images/featured-item-01.png" alt=""></i>
+                                </div>
+                                <h5 class="features-title">Modern Strategy</h5>
+                                <p>Our Strategy team will help you capture the market easily</p>
+                            </div>
+                        </div>
+                        <!-- ***** Features Small Item End ***** -->
+
+                        <!-- ***** Features Small Item Start ***** -->
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12"
+                            data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
+                            <div class="features-small-item">
+                                <div class="icon">
+                                    <i><img src="images/featured-item-01.png" alt=""></i>
+                                </div>
+                                <h5 class="features-title">Skilled Developers</h5>
+                                <p>All our develpers are highly skilled in their fields to fulfill your requirements</p>
+                            </div>
+                        </div>
+                        <!-- ***** Features Small Item End ***** -->
+
+                        <!-- ***** Features Small Item Start ***** -->
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12"
+                            data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
+                            <div class="features-small-item">
+                                <div class="icon">
+                                    <i><img src="images/featured-item-01.png" alt=""></i>
+                                </div>
+                                <h5 class="features-title">Ultimate Marketing</h5>
+                                <p>Our marketing and Design team is our ultimate pride.</p>
+                            </div>
+                        </div>
+                        <!-- ***** Features Small Item End ***** -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ----------------------------------------
+             end   Features Small Start  3 cards
+    ----------------------------------------------->
+
+    <!-- ----------------------------------------
+             services section
+    ----------------------------------------------->
+    <div class="container-fluid gtco-feature" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 reveal fade-left">
+                    <div class="cover">
+                        <div class="card">
+                            <svg class="back-bg" width="100%" viewBox="0 0 900 700"
+                                style="position:absolute; z-index: -1">
+                                <defs>
+                                    <linearGradient id="PSgrad_01" x1="64.279%" x2="0%" y1="76.604%" y2="0%">
+                                        <stop offset="0%" stop-color="rgb(1,230,248)" stop-opacity="1" />
+                                        <stop offset="100%" stop-color="rgb(29,62,222)" stop-opacity="1" />
+                                    </linearGradient>
+                                </defs>
+                                <path fill-rule="evenodd" opacity="0.102" fill="url(#PSgrad_01)"
+                                    d="M616.656,2.494 L89.351,98.948 C19.867,111.658 -16.508,176.639 7.408,240.130 L122.755,546.348 C141.761,596.806 203.597,623.407 259.843,609.597 L697.535,502.126 C748.221,489.680 783.967,441.432 777.751,392.742 L739.837,95.775 C732.096,35.145 677.715,-8.675 616.656,2.494 Z" />
+                            </svg>
+                            <!-- *************-->
+
+                            <svg width="100%" viewBox="0 0 700 500">
+                                <clipPath id="clip-path">
+                                    <path
+                                        d="M89.479,0.180 L512.635,25.932 C568.395,29.326 603.115,76.927 590.357,129.078 L528.827,380.603 C518.688,422.048 472.661,448.814 427.190,443.300 L73.350,400.391 C32.374,395.422 -0.267,360.907 -0.002,322.064 L1.609,85.154 C1.938,36.786 40.481,-2.801 89.479,0.180 Z">
+                                    </path>
+                                </clipPath>
+                                <!-- xlink:href for modern browsers, src for IE8- -->
+                                <image clip-path="url(#clip-path)" xlink:href="images/learn-img.jpg" width="100%"
+                                    height="465" class="svg__image"></image>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 reveal fade-right ">
+                    <h2> We are a Creative Digital
+                        Development & Marketing Agency </h2>
+                    <p> Our agency is committed to delivering the best possible results for our clients. We understand
+                        the importance of having a strong online presence in today's digital age, and we are here to
+                        help you achieve your goals. Whether you need a brand new website, a redesign of your existing
+                        site, or a customized digital marketing plan, we have the expertise to make it happen.. </p>
+                    <p>
+                        <small>At our agency, we pride ourselves on our professionalism, expertise, and commitment to
+                            customer satisfaction. We believe that our success is only possible when our clients are
+                            successful, and we work tirelessly to ensure that every project we undertake delivers
+                            tangible results..
+                        </small>
+                    </p>
+                    <a href="#about" class="button"> Our Services <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- about -->
+
+    <div class="container-fluid gtco-features" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- <div class="col-lg-4 about-left"> -->
+                    <h2> Explore The Services<br />
+                        We Offer For You </h2>
+                    <p> We understand that every business is unique, and that's why we offer customized solutions
+                        tailored to meet your specific needs. Whether you're looking for a brand new website, a redesign
+                        of your existing site, or a digital marketing plan to drive more traffic and leads to your
+                        website, we have the expertise and experience to deliver results. </p>
+                    <a href="#" class="button">All Services <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-lg-8 reveal fade-right">
+                    <svg id="bg-services" width="100%" viewBox="0 0 1000 800" class="reveal fade-right">
+                        <defs>
+                            <linearGradient id="PSgrad_02" x1="64.279%" x2="0%" y1="76.604%" y2="0%">
+                                <stop offset="0%" stop-color="rgb(1,230,248)" stop-opacity="1" />
+                                <stop offset="100%" stop-color="rgb(29,62,222)" stop-opacity="1" />
+                            </linearGradient>
+                        </defs>
+                        <path fill-rule="evenodd" opacity="0.102" fill="url(#PSgrad_02)"
+                            d="M801.878,3.146 L116.381,128.537 C26.052,145.060 -21.235,229.535 9.856,312.073 L159.806,710.157 C184.515,775.753 264.901,810.334 338.020,792.380 L907.021,652.668 C972.912,636.489 1019.383,573.766 1011.301,510.470 L962.013,124.412 C951.950,45.594 881.254,-11.373 801.878,3.146 Z" />
+                    </svg>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card text-center">
+                                <div class="oval"><img class="card-img-top" src="images/web-design.png" alt=""></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Web Design</h3>
+                                    <p class="card-text">Give Your Busines an Online Presence with a Fully responsive
+                                        modern Website.</p>
+                                </div>
+                            </div>
+                            <div class="card text-center">
+                                <div class="oval"><img class="card-img-top" src="images/marketing.png" alt=""></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Marketing</h3>
+                                    <p class="card-text">Spread your brand's Presence and make your business visible</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card text-center">
+                                <div class="oval"><img class="card-img-top" src="images/seo.png" alt=""></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Ecommerce</h3>
+                                    <p class="card-text">Get your ecommerce Platform, Move your Shop online and Gain
+                                        huge profits</p>
+                                </div>
+                            </div>
+                            <div class="card text-center">
+                                <div class="oval"><img class="card-img-top" src="images/graphics-design.png" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Application Development</h3>
+                                    <p class="card-text">Move with the modern World and get a application for your
+                                        business</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ----------------------------------------
+             end services section
+    ----------------------------------------------->
+
+    <!-- ----------------------------------------
+             work process section
+    ----------------------------------------------->
+    <section class="mini" id="work-process">
+        <div class="mini-content">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-lg-3 col-lg-6">
+                        <div class="info">
+                            <h1>Work Process</h1>
+                            <p>Our collaborative work process ensures on-time, high-quality project delivery that meets
+                                your unique needs and objectives.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ***** Mini Box Start ***** -->
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="images/work-process-item-01.png" alt=""></i>
+                            <strong>Get Ideas</strong>
+                            <span>from client</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="images/work-process-item-01.png" alt=""></i>
+                            <strong>Sketch Up</strong>
+                            <span>All the requirements</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="images/work-process-item-01.png" alt=""></i>
+                            <strong>Disscuss</strong>
+                            <span>with the teams.</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="images/work-process-item-01.png" alt=""></i>
+                            <strong>Revise</strong>
+                            <span>for any changes.</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="images/work-process-item-01.png" alt=""></i>
+                            <strong>Developement</strong>
+                            <span> Of the ultimate product</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="images/work-process-item-01.png" alt=""></i>
+                            <strong>Launch </strong>
+                            <span> Project Completed 👍</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- ***** Mini Box End ***** -->
+            </div>
+        </div>
+    </section>
+    <!-- ----------------------------------------
+            end  work process section
+    ----------------------------------------------->
+
+    <!-- ----------------------------------------
+            counter section
+    ----------------------------------------------->
+    <section class="counter">
+        <div class="content">
+            <div class="container">
+                <div class="row row-counter">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="count-item decoration-bottom">
+                            <span class="strong-span">
+                                <strong class="number">5</strong>
+                                <span>Projects</span>
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="count-item decoration-top">
+                            <span class="strong-span" style="padding: 36px 20px;">
+                                <strong class="number">3</strong>
+                                <span>Happy Clients</span>
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="count-item decoration-bottom">
+                            <span class="strong-span" style="padding: 35px 28px;">
+                                <strong class="number">11000</strong>
+                                <span>Lines of Code</span>
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="count-item">
+                            <span class="strong-span">
+                                <strong class="number">13</strong>
+                                <span>Technologies</span>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            $('.number').each(function () {
+                $(this).prop('counter', 0).animate({
+                    counter: $(this).text()
+                }, {
+                    duration: 999,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now) + '+');
+                    }
+                })
+            });
+        });
+    </script>
+    <!-- ----------------------------------------
+           end  counter section
+    ----------------------------------------------->
+
+
+    <!-- ----------------------------------------
+            customers say about section
+    ----------------------------------------------->
+    <!-- css: Hide/show line : 669 -->
+    <div class="container-fluid testimonials">
+        <div class="row allcards">
+            <h1 style="text-align: center; color: white; padding-bottom: 20px;">What our customers say about us.</h1>
+            <div class="col-lg-4 cardss">
+                <div class="cardthree">
+                    <div class="face front-face">
+                        <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+                            alt="" class="profile">
+                        <div class="pt-3 text-uppercase name">
+
+                        </div>
+                        <div class="designation">Android Developer</div>
+                    </div>
+                    <div class="face back-face">
+                        <span class="fas fa-quote-left"></span>
+                        <div class="testimonial">
+                            I made bacck the purchase price in just 48 hours! Thank you for making it pain less,
+                            pleasant.
+                            The service was execellent. I will refer everyone I know.
+                        </div>
+                        <span class="fas fa-quote-right"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 cardss">
+                <div class="cardthree">
+                    <div class="face front-face">
+                        <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                            alt="" class="profile">
+                        <div class="pt-3 text-uppercase name">
+                            Jeffery Kennan
+                        </div>
+                        <div class="designation">Full Stack Developer</div>
+                    </div>
+                    <div class="face back-face">
+                        <span class="fas fa-quote-left"></span>
+                        <div class="testimonial">
+                            Really good, you have saved our business! I made bacck the purchase price in just 48 hours!
+                            man, this thing is getting better and better as I learn more about it.
+                        </div>
+                        <span class="fas fa-quote-right"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 cardss">
+                <div class="cardthree">
+                    <div class="face front-face">
+                        <img src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                            alt="" class="profile">
+                        <div class="pt-3 text-uppercase name">
+                            Issac Maxwell
+                        </div>
+                        <div class="designation">Finance Director</div>
+                    </div>
+                    <div class="face back-face">
+                        <span class="fas fa-quote-left"></span>
+                        <div class="testimonial">
+                            Account keeper is the most valuable business research we have EVER purchased. Without
+                            electrician, we would ahave gone bankrupt by now.
+                        </div>
+                        <span class="fas fa-quote-right"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ----------------------------------------
+         end   customers say about section
+    ----------------------------------------------->
+
+    <!-- ----------------------------------------
+            features lists section
+    ----------------------------------------------->
+
+    <div class="row1-container" id="whyus">
+        <div class="box box-down cyan">
+            <h2>Quality Results</h2>
+            <p>Our results will always give you smile on your face</p>
+            <img src="images/quality-results.png" alt="">
+        </div>
+
+        <div class="box red">
+            <h2>Analytics</h2>
+            <p>Before every project we conduct specific analysis to deliver the best</p>
+            <img src="images/analytics.png" alt="">
+        </div>
+
+        <div class="box box-down blue">
+            <h2>Affordable Pricing</h2>
+            <p>Our Pricing are always affordable and in your budget</p>
+            <img src="images/affordable-pricing.png" alt="">
+        </div>
+    </div>
+    <div class="row1-container " style="margin-bottom: 201px;">
+        <div class="box box-down cyan">
+            <h2>customer support</h2>
+            <p>No matter when you call us, We are available for you.</p>
+            <img src="images/easy-to-use.png" alt="">
+        </div>
+
+        <div class="box red">
+            <h2>Free Consulancy</h2>
+            <p>Still Confused? We will consult you totally free of cost</p>
+            <img src="images/free-support.png" alt="">
+        </div>
+
+        <div class="box box-down blue">
+            <h2>Fast Developement</h2>
+            <p>We have the ability to complete your project before the deadline</p>
+            <img src="images/effectively-increase.png" alt="">
+        </div>
+    </div>
+    <!-- ----------------------------------------
+           end features lists section
+    ----------------------------------------------->
+
+    <!-- ----------------------------------------
+            brand names section
+    ----------------------------------------------->
+    <!-- <div class="container-fluid gtco-logo-area">
+        <div class="container">
+            <div class="row">
+                <div class="col five_icon"><img src="images/logo1.png" class="img-fluid" alt=""></div>
+                <div class="col five_icon"><img src="images/logo2.png" class="img-fluid" alt=""></div>
+                <div class="col five_icon"><img src="images/logo3.png" class="img-fluid" alt=""></div>
+                <div class="col five_icon"><img src="images/logo4.png" class="img-fluid" alt=""></div>
+                <div class="col five_icon"><img src="images/logo5.png" class="img-fluid" alt=""></div>
+            </div>
+        </div>
+    </div> -->
+    <!-- ----------------------------------------
+          end  brand names section
+    ----------------------------------------------->
+
+    <!-- ----------------------------------------
+            News section
+    ----------------------------------------------->
+    <!-- <section class="section" id="blog">
+        <div class="container"> -->
+    <!-- ***** Section Title Start ***** -->
+    <!-- <div class="row">
+                <div class="col-lg-12">
+                    <div class="center-heading">
+                        <h2 class="section-title">Latest News & Articles</h2>
+                    </div>
+                </div>
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="center-text">
+                        <p>Integer molestie aliquam gravida. Nullam nec arcu finibus, imperdiet nulla vitae, placerat nibh. Cras maximus venenatis molestie.</p>
+                    </div>
+                </div>
+            </div> -->
+    <!-- ***** Section Title End ***** -->
+
+    <!-- <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="blog-post-thumb">
+                        <div class="img">
+                            <img src="images/news1.jpg" alt="" style="width: 100%;">
+                        </div>
+                        <div class="blog-content">
+                            <h3>
+                                <a href="#">Vivamus ac vehicula dui</a>
+                            </h3>
+                            <div class="text">
+                               Cras aliquet ligula dui, vitae fermentum velit tincidunt id. Praesent eu finibus nunc. Nulla in sagittis eros. Aliquam egestas augue.
+                            </div>
+                            <a href="#" class="button center" style="display: inline-flex !important;">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="blog-post-thumb">
+                        <div class="img">
+                            <img src="images/news2.jpg" alt="" style="width: 100%;">
+                        </div>
+                        <div class="blog-content"> -->
+    <!-- <h3>
+                                <a href="#">Phasellus convallis augue</a>
+                            </h3>
+                            <div class="text">
+                                Aliquam commodo ornare nisl, et scelerisque nisl dignissim ac. Vestibulum finibus urna ut velit venenatis, vel ultrices sapien mattis.
+                            </div>
+                            <a href="#" class="button center" style="display: inline-flex !important;">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="blog-post-thumb">
+                        <div class="img">
+                            <img src="images/news3.jpg" alt="" style="width: 100%;">
+                        </div>
+                        <div class="blog-content">
+                            <h3>
+                                <a href="#">Nam gravida purus non</a>
+                            </h3>
+                            <div class="text">
+                                Maecenas eu erat vitae dui convallis consequat vel gravida nulla. Vestibulum finibus euismod odio, ut tempus enim varius eu.
+                            </div>
+                            <a href="#" class="button center" style="display: inline-flex !important;">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    <!-- </section> -->
+    <!-- ----------------------------------------
+           end  News section
+    ----------------------------------------------->
+
+    <!-- ----------------------------------------
+           contact section
+    ----------------------------------------------->
+    <section class="body" id="contactUs">
+        <div class="container2">
+            <form method="post" role="form" class="php-email-form" id="contact-form">
+
+                <p>Talk To Us</p>
+                <input type="text" name="from_name" id="name" placeholder="Your name" required><br>
+                <input type="email" name="from_email" id="email" placeholder="Your Email-id" required><br>
+                <textarea name="message" id="" cols="30" rows="10" placeholder="your massages"></textarea><br>
+                <input type="submit" class="sendmsg" value="send message"><br>
+                <!-- <input type="text" class="sent-message" value="Message sent"><br> -->
+
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social contact-ions">
+                        <li><a href="tel:09932237171" class="icon"><i class="fa-solid fa-phone"></i></a></li>
+                        <li><a href="https://api.whatsapp.com/send/?phone=9932237171&text=hello&type=phone_number&app_absent=0"
+                                class="icon"><i class="fa-brands fa-whatsapp"></i></a></li>
+                        <li><a href="" class="icon"><i class="fa-regular fa-envelope"></i></a></li>
+
+                    </ul>
+                </div>
+                <!-- <a href="#">Forgot Password?</a> -->
+            </form>
+
+            <div class="drops">
+                <div class="drop drop-1"></div>
+                <div class="drop drop-2"></div>
+                <div class="drop drop-3"></div>
+                <div class="drop drop-4"></div>
+                <div class="drop drop-5"></div>
+            </div>
+        </div>
+    </section>
+    <!-- ----------------------------------------
+           end  contact section
+    ----------------------------------------------->
+
+    <!-- ----------------------------------------
+           footer section
+    ----------------------------------------------->
+
+    <footer id="footer">
+
+        
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Brick Sols</h3>
+                        <p>
+                            <br><br>
+                            <strong>Phone:</strong> +91 9932237171<br>
+                            <strong>Email:</strong> business.bricksols@gmail.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#services">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#about">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#services">Application Development</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#services">Web Development</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#services">Remote Develepers</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#services">Digital Marketing</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#services">Graphic Design</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Social Networks</h4>
+                        <!-- <p>Fol</p> -->
+                        <div class="social-links mt-3">
+                            <a href="https://www.linkedin.com/company/brick-sols/" class="twitter"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100090748595858" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="fa-brands fa-twitter"></i></a>
+                            <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
+                            <!-- <a href="https://www.linkedin.com/company/88055286" class="linkedin"><i
+                                    class="bx bxl-linkedin"></i></a> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Brick Sols</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+                <!-- Designed by <a href="https://bootstrapmade.com/"></a> -->
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <!-- ----------------------------------------
+          end footer section
+    ----------------------------------------------->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="my.js"></script>
+</body>
+
+</html>
